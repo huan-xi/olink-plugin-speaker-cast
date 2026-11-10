@@ -8,10 +8,16 @@
 
 ## 构建与打包
 
+二进制目录必须对齐 Host：`bin/{os}-{arch}/plugin`  
+（`os`/`arch` = Rust `std::env::consts`，例如 `linux-aarch64`、`macos-aarch64`，**不是** `darwin`）。
+
 ```bash
-cargo build --release
+# 仅本机架构
 ./scripts/pack.sh
 # → dist/speaker_cast-1.0.0.olinkpkg
+
+# 同一包打多架构（需已 rustup target / 交叉工具链）
+PACK_TARGETS=linux-aarch64,macos-aarch64 ./scripts/pack.sh
 ```
 
 管理台「插件」上传 `.olinkpkg` → 启用。Hello：`features: ["log"]`，`features_required: []`。
