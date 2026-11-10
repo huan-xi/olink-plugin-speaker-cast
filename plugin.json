@@ -1,0 +1,32 @@
+{
+  "domain": "speaker_cast",
+  "name": "音箱投送 AirPlay",
+  "version": "1.0.0",
+  "description": "米家音箱 AirPlay 接收投送（开源服务型插件，不接 HAP）",
+  "publisher": "olink",
+  "runtime": {
+    "type": "process",
+    "entry": "bin/{os}-{arch}/plugin"
+  },
+  "ui": {
+    "entry": "ui/entry.js",
+    "css": "ui/entry.css",
+    "runtime": 1,
+    "module": "routes"
+  },
+  "api": {
+    "transport": "uds",
+    "protocol": 1,
+    "features": ["log"],
+    "features_required": []
+  },
+  "permissions": ["log", "storage.domain", "net.outbound"],
+  "routes": {
+    "menu": {
+      "title": "音箱投送",
+      "icon": "ui/icons/icon.svg",
+      "path": ""
+    }
+  },
+  "autostart": true
+}

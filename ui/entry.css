@@ -1,0 +1,32 @@
+.plg-speaker_cast-page {
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+.plg-speaker_cast-page h1 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.plg-speaker_cast-page h2 {
+  font-size: 16px;
+  margin: 16px 0 8px;
+}
+.plg-speaker_cast-page .meta {
+  color: #64748b;
+  margin-bottom: 12px;
+}
+.plg-speaker_cast-page .err {
+  color: #b91c1c;
+}
+.plg-speaker_cast-page button {
+  margin: 4px 8px 4px 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+}
+.plg-speaker_cast-page ul {
+  padding-left: 1.2em;
+  margin: 0 0 12px;
+}

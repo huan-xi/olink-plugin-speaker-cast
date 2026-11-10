@@ -1,0 +1,53 @@
+[workspace]
+members = [".", "crates/shairplay"]
+resolver = "3"
+
+[package]
+name = "olink-plugin-speaker-cast"
+version = "1.0.0"
+edition = "2024"
+publish = false
+description = "开源服务型插件：米家音箱 AirPlay 投送（domain=speaker_cast）"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "olink_plugin_speaker_cast"
+path = "src/lib.rs"
+
+[[bin]]
+name = "olink-plugin-speaker-cast"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+axum = "0.8"
+base64 = "0.22"
+bytes = "1"
+chrono = { version = "0.4", features = ["serde"] }
+env_logger = "0.11"
+futures = "0.3"
+http-body-util = "0.1"
+hyper = { version = "1", features = ["client", "http1"] }
+hyper-util = { version = "0.1", features = ["tokio", "http1", "client"] }
+if-addrs = "0.15"
+log = "0.4"
+md5 = "0.7"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "cookies"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "fs", "signal", "io-util", "sync", "time", "process"] }
+tokio-util = { version = "0.7", features = ["io"] }
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+# AirPlay RAOP（随本仓开源分发）
+shairplay = { path = "crates/shairplay", default-features = true }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
