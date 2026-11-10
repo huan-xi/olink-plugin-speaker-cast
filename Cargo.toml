@@ -9,6 +9,7 @@ edition = "2024"
 publish = false
 description = "开源服务型插件：米家音箱 AirPlay 投送（domain=speaker_cast）"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/huan-xi/olink-plugin-speaker-cast"
 
 [lib]
 name = "olink_plugin_speaker_cast"

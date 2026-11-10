@@ -1,4 +1,8 @@
 /target/
 /dist/
 *.olinkpkg
+.idea/
 .DS_Store
+*.pem
+.env
+.env.*
